@@ -1,17 +1,40 @@
 .search{
     margin-top: 50vh;
+    position: relative;
 
     & div, & input{
         margin: 0 auto;
         display: block;
+        
     }
 
     &__input{
-        width: 80%;
-        height: 5vh;
+        height: 7vh;
         border-radius: 20px;
-        border: 1px solid #000;
+        border: 1px solid $back-color;
         padding: 0 20px;
-        font-size: 18px;
+        font-size: 21px;
+        z-index: 100; 
+        position: absolute;
+        left:10%;
+        width: 80%;
+    }
+
+    &__suggest{
+        position: absolute;
+        padding-top: 7vh;
+        padding-bottom: 15px;
+        border: 1px solid $back-color;
+        border-radius: 20px;
+        background: #fff;
+        margin-top: -2px;
+        top:0;
+        z-index: 5; 
+        left:10%;
+        width: calc( 80% - 1px );
+
+        & a{
+            margin: 15px 20px;
+        }
     }
 }

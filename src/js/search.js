@@ -9,9 +9,13 @@ export default () => {
     if(!input) return;
 
     input.addEventListener('input', (e)=>{
+        
        const value = e.target.value;
 
-       if(value.length < 3) return;
+       if(value.length < 3){
+            Suggest.removeSuggest(input.parentNode);
+            return;
+        }
 
        fetch(
            'http://127.0.0.1:8232/search',

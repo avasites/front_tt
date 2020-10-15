@@ -2,14 +2,26 @@
 
 export default {
 
+    removeSuggest(node) {
+        const   classParent =  node.classList[0],
+                className =  classParent+'__suggest',
+                blockSuggest = document.querySelector('div.'+className);
+
+        if(!blockSuggest) return;
+
+        blockSuggest.remove();
+    },
+
+
     printSuggest (list, node) {
+
+        this.removeSuggest(node);
 
         if(!node)
         {
             console.error('Не передан node');
             return;
         }
-        console.log(typeof list !== 'object');
 
         if(typeof list !== 'object' ) return;
 
